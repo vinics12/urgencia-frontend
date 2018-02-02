@@ -1,0 +1,28 @@
+<div class="card-panel">
+<aol-map id="map">
+  <aol-view [zoom]="zoom">
+    <aol-coordinate [x]="-46.65" [y]="-23.5493493" [srid]="'EPSG:4326'"></aol-coordinate>
+  </aol-view>
+  <aol-layer-tile>
+    <aol-source-osm></aol-source-osm>
+  </aol-layer-tile>
+  <aol-layer-vector [opacity]="opacity">
+    <aol-source-vector>
+      <aol-feature>
+        <aol-geometry-point>
+          <aol-coordinate [x]="-46.65" [y]="-23.5493493" [srid]="'EPSG:4326'"></aol-coordinate>
+        </aol-geometry-point>
+        <aol-style>
+          <aol-style-icon [src]="'assets/marker.png'" [anchor]="[0.5, 1]" [anchorXUnits]="'fraction'" [anchorYUnits]="'fraction'" [scale]="0.1"
+            [anchorOrigin]="'top-left'">
+          </aol-style-icon>
+        </aol-style>
+      </aol-feature>
+    </aol-source-vector>
+  </aol-layer-vector>
+</aol-map>
+<span>zoom:</span>
+<button (click)="increaseZoom()">+</button>
+<button (click)="decreaseZoom()">-</button>
+<br>
+</div>
